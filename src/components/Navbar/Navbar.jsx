@@ -66,31 +66,59 @@ function Navbar() {
                     <ul className={cx("navbar__list")}>
                         <li className={cx("navbar__item")}>
                             <Link to="/">Home</Link>
-                            <img src={icons.arrowDown} alt="" />
+                            <img
+                                className={cx("navbar__item--icon")}
+                                src={icons.arrowDown}
+                                alt=""
+                            />
                         </li>
                         <li className={cx("navbar__item")}>
                             <Link to="/category">Category</Link>
-                            <img src={icons.arrowDown} alt="" />
+                            <img
+                                className={cx("navbar__item--icon")}
+                                src={icons.arrowDown}
+                                alt=""
+                            />
                         </li>
                         <li className={cx("navbar__item")}>
                             <Link to="/brand">Brand</Link>
-                            <img src={icons.arrowDown} alt="" />
+                            <img
+                                className={cx("navbar__item--icon")}
+                                src={icons.arrowDown}
+                                alt=""
+                            />
                         </li>
                         <li className={cx("navbar__item")}>
                             <Link to="/products">Products</Link>
-                            <img src={icons.arrowDown} alt="" />
+                            <img
+                                className={cx("navbar__item--icon")}
+                                src={icons.arrowDown}
+                                alt=""
+                            />
                         </li>
                         <li className={cx("navbar__item")}>
                             <Link to="/about">About</Link>
-                            <img src={icons.arrowDown} alt="" />
+                            <img
+                                className={cx("navbar__item--icon")}
+                                src={icons.arrowDown}
+                                alt=""
+                            />
                         </li>
                         <li className={cx("navbar__item")}>
                             <Link to="/shop">Shop</Link>
-                            <img src={icons.arrowDown} alt="" />
+                            <img
+                                className={cx("navbar__item--icon")}
+                                src={icons.arrowDown}
+                                alt=""
+                            />
                         </li>
                         <li className={cx("navbar__item")}>
                             <Link to="/pages">Pages</Link>
-                            <img src={icons.arrowDown} alt="" />
+                            <img
+                                className={cx("navbar__item--icon")}
+                                src={icons.arrowDown}
+                                alt=""
+                            />
                         </li>
                     </ul>
                 </nav>
