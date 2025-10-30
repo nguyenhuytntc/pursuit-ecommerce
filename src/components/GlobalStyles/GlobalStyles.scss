@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto+Slab:wght@700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    --primary-color: #005d63;
+
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Manrope", sans-serif;
+}
+
+button,
+input {
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.container {
+    max-width: 1470px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
