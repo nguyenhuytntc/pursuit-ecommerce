@@ -1,0 +1,95 @@
+const menuData = [
+    {
+        path: "/",
+        title: "Home",
+        children: [
+            { name: "Home Default", path: "/" },
+            { name: "Home Fashion", path: "/home/fashion" },
+            { name: "Home Electronics", path: "/home/electronics" },
+            { name: "Home Furniture", path: "/home/furniture" },
+            { name: "Home Minimal", path: "/home/minimal" },
+            { name: "Home Modern", path: "/home/modern" },
+        ],
+    },
+    {
+        path: "/category",
+        title: "Category",
+        children: [
+            { path: "/men-fashion", name: "Men Fashion" },
+            { path: "/women-fashion", name: "Women Fashion" },
+            { path: "/kids-fashion", name: "Kids Fashion" },
+            { path: "/baby-fashion", name: "Baby Fashion" },
+            { path: "/baby-fashion", name: "Baby Fashion" },
+            { path: "/mobile-device", name: "Mobile Device" },
+            { path: "/beauty-products", name: "Beauty Products" },
+            { path: "/furniture", name: "Furniture" },
+            { path: "/smart-watch", name: "Smart Watch" },
+            { path: "/modern-shoes", name: "Modern Shoes" },
+            { path: "/jewelry", name: "Jewelry" },
+            { path: "/home-products", name: "Home Products" },
+        ],
+    },
+    {
+        path: "/brand",
+        title: "Brand",
+        children: [
+            { name: "Nike", path: "/brand/nike" },
+            { name: "Adidas", path: "/brand/adidas" },
+            { name: "Zara", path: "/brand/zara" },
+            { name: "Apple", path: "/brand/apple" },
+            { name: "Samsung", path: "/brand/samsung" },
+            { name: "Sony", path: "/brand/sony" },
+            { name: "LG", path: "/brand/lg" },
+            { name: "Gucci", path: "/brand/gucci" },
+            { name: "IKEA", path: "/brand/ikea" },
+        ],
+    },
+    {
+        path: "/products",
+        title: "Products",
+        children: [
+            { name: "New Arrivals", path: "/products/new-arrivals" },
+            { name: "Best Sellers", path: "/products/best-sellers" },
+            { name: "Featured", path: "/products/featured" },
+            { name: "Discounted", path: "/products/discounted" },
+            { name: "Trending", path: "/products/trending" },
+            { name: "Coming Soon", path: "/products/coming-soon" },
+        ],
+    },
+    {
+        path: "/about",
+        title: "About",
+        children: [
+            { name: "Our Team", path: "/about/team" },
+            { name: "Our Story", path: "/about/story" },
+            { name: "Careers", path: "/about/careers" },
+            { name: "Testimonials", path: "/about/testimonials" },
+        ],
+    },
+    {
+        path: "/shop",
+        title: "Shop",
+        children: [
+            { name: "Shop Grid", path: "/shop/grid" },
+            { name: "Shop List", path: "/shop/list" },
+            { name: "Shop Sidebar", path: "/shop/sidebar" },
+            { name: "Single Product", path: "/shop/product" },
+            { name: "Cart", path: "/shop/cart" },
+            { name: "Checkout", path: "/shop/checkout" },
+        ],
+    },
+    {
+        path: "/pages",
+        title: "Pages",
+        children: [
+            { name: "Login / Register", path: "/auth" },
+            { name: "FAQ", path: "/pages/faq" },
+            { name: "Terms & Conditions", path: "/pages/terms" },
+            { name: "Privacy Policy", path: "/pages/privacy" },
+            { name: "Contact Us", path: "/pages/contact" },
+            { name: "404 Error", path: "/pages/404" },
+        ],
+    },
+];
+
+export default menuData;

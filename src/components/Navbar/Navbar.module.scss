@@ -6,6 +6,7 @@
 .header__top-row {
     display: flex;
     align-items: center;
+    margin-bottom: 28px;
 }
 .header__logo {
     color: #fff;
@@ -15,12 +16,6 @@
     line-height: 3.4rem; /* 141.667% */
 }
 
-.header__actions {
-    margin-left: 42px;
-    display: flex;
-    align-items: center;
-}
-
 .header__search {
     display: flex;
     align-items: center;
@@ -28,6 +23,38 @@
     border: 1px solid #fff;
     margin-left: 85px;
     flex: 1;
+
+    @media (max-width: 1024px) {
+        margin-left: 45px;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.search__desktop {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.search__mobile {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.header__actions {
+    margin-left: 42px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        margin-left: auto;
+    }
 }
 
 .search__input {
@@ -61,26 +88,169 @@
 }
 
 // Navbar
+.header__navbar {
+    display: flex;
+}
+.navbar__button--toggle {
+    display: none;
+    cursor: pointer;
+    gap: 5px;
+
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 2rem; /* 142.857% */
+    }
+}
+
 .navbar__list {
     display: flex;
     align-items: center;
     gap: 40px;
     margin-top: 28px;
     margin-left: 170px;
+    transition: left 0.3s ease;
+
+    @media (max-width: 1024px) {
+        margin-left: 130px;
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        position: fixed;
+        overflow-y: auto;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        flex-direction: column;
+        margin: initial;
+        width: min(320px, 100%);
+        padding: 60px 20px 20px;
+        background-color: var(--primary-color);
+        z-index: 99;
+    }
+}
+.navbar__button--checkbox:checked ~ .navbar__list {
+    left: 0;
+}
+
+.navbar__backdrop {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    inset: 0;
+    background: rgba($color: #000000, $alpha: 0.8);
+    z-index: 98;
+    transition: all 0.3s ease;
+}
+.navbar__button--checkbox:checked ~ .navbar__backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar__button--close {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 3rem;
+        color: #fff;
+    }
 }
 .navbar__item {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 6px;
 
-    color: var(--Text-Color-White, #fff);
-    text-align: right;
+    color: #fff;
 
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 2.8rem; /* 175% */
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+
+.navbar__link {
+    @media (max-width: 768px) {
+        display: block;
+        width: 100%;
+    }
 }
 
 .navbar__item--icon {
     margin-top: 3px;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+        position: absolute;
+        right: 0;
+        top: 9px;
+
+        &.rotate {
+            transform: rotate(270deg);
+        }
+    }
+}
+
+.navbar__dropdown {
+    display: none;
+    position: absolute;
+    padding-top: 28px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max(210px, 100%);
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    z-index: 99;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        top: initial;
+
+        &.show {
+            display: flex !important;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.navbar__item:hover .navbar__dropdown {
+    display: block;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.sub__link {
+    display: block;
+    width: 100%;
+    padding: 8px 24px;
+    color: #fff;
+    border-top: 1px solid #1e787d;
+
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem; /* 175% */
+
+    &:hover {
+        color: var(--yellow);
+    }
 }

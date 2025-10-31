@@ -1,11 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto+Slab:wght@700&display=swap");
-
+$breakpoint: (
+    sm: "640px",
+    // small devices
+    md: "768px",
+    // tablets
+    lg: "1024px",
+    // small laptops
+    xl: "1280px",
+    // desktop
+    xxl: "1440px",
+    // large desktop (custom),
+);
 * {
     box-sizing: border-box;
 }
 
 html {
     --primary-color: #005d63;
+    --yellow: #ffd44d;
+    --text-dark: #131717;
 
     font-size: 62.5%;
 }
@@ -21,6 +34,10 @@ input {
     outline: none;
     border: none;
 }
+button,
+a {
+    cursor: pointer;
+}
 
 a {
     color: inherit;
@@ -28,9 +45,12 @@ a {
 }
 
 .container {
-    max-width: 1470px;
+    width: min(1218px, 100%);
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.hidden {
+    display: none;
 }

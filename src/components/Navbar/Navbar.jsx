@@ -1,7 +1,10 @@
 import classNames from "classnames/bind";
 import styles from "./Navbar.module.scss";
 import icons from "@assets/icons";
-import { Link } from "react-router-dom";
+import NavbarItem from "./NavbarItem";
+import menuData from "./menuData";
+import HeaderSearch from "./HeaderSearch";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -11,16 +14,7 @@ function Navbar() {
             <div className="container">
                 <div className={cx("header__top-row")}>
                     <h1 className={cx("header__logo")}>Pursuit</h1>
-                    <div className={cx("header__search")}>
-                        <input
-                            type="text"
-                            className={cx("search__input")}
-                            placeholder="Search for anything"
-                        />
-                        <button className={cx("search__button")}>
-                            <img src={icons.search} alt="" />
-                        </button>
-                    </div>
+                    <HeaderSearch desktop={true} />
                     <div className={cx("header__actions")}>
                         <button
                             className={cx(
@@ -63,64 +57,38 @@ function Navbar() {
                     </div>
                 </div>
                 <nav className={cx("header__navbar")}>
+                    <label
+                        className={cx("navbar__button--toggle")}
+                        htmlFor="navbar-menu"
+                    >
+                        <img src={icons.menu} alt="" /> Menu
+                    </label>
+                    <input
+                        className={cx("navbar__button--checkbox", "hidden")}
+                        type="checkbox"
+                        id="navbar-menu"
+                    />{" "}
+                    <label
+                        htmlFor="navbar-menu"
+                        className={cx("navbar__backdrop")}
+                    ></label>
                     <ul className={cx("navbar__list")}>
-                        <li className={cx("navbar__item")}>
-                            <Link to="/">Home</Link>
-                            <img
-                                className={cx("navbar__item--icon")}
-                                src={icons.arrowDown}
-                                alt=""
+                        <label
+                            className={cx("navbar__button--close")}
+                            htmlFor="navbar-menu"
+                        >
+                            &times;
+                        </label>
+                        {menuData.map((item, index) => (
+                            <NavbarItem
+                                key={index}
+                                title={item.title}
+                                path={item.path}
+                                subMenu={item.children}
                             />
-                        </li>
-                        <li className={cx("navbar__item")}>
-                            <Link to="/category">Category</Link>
-                            <img
-                                className={cx("navbar__item--icon")}
-                                src={icons.arrowDown}
-                                alt=""
-                            />
-                        </li>
-                        <li className={cx("navbar__item")}>
-                            <Link to="/brand">Brand</Link>
-                            <img
-                                className={cx("navbar__item--icon")}
-                                src={icons.arrowDown}
-                                alt=""
-                            />
-                        </li>
-                        <li className={cx("navbar__item")}>
-                            <Link to="/products">Products</Link>
-                            <img
-                                className={cx("navbar__item--icon")}
-                                src={icons.arrowDown}
-                                alt=""
-                            />
-                        </li>
-                        <li className={cx("navbar__item")}>
-                            <Link to="/about">About</Link>
-                            <img
-                                className={cx("navbar__item--icon")}
-                                src={icons.arrowDown}
-                                alt=""
-                            />
-                        </li>
-                        <li className={cx("navbar__item")}>
-                            <Link to="/shop">Shop</Link>
-                            <img
-                                className={cx("navbar__item--icon")}
-                                src={icons.arrowDown}
-                                alt=""
-                            />
-                        </li>
-                        <li className={cx("navbar__item")}>
-                            <Link to="/pages">Pages</Link>
-                            <img
-                                className={cx("navbar__item--icon")}
-                                src={icons.arrowDown}
-                                alt=""
-                            />
-                        </li>
+                        ))}
                     </ul>
+                    <HeaderSearch desktop={false} />
                 </nav>
             </div>
         </header>
