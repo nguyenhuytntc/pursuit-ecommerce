@@ -9,6 +9,7 @@ import { useState } from "react";
 const cx = classNames.bind(styles);
 
 function Navbar() {
+    const [showDropDown, setShowDropDown] = useState(false);
     return (
         <header className={cx("header")}>
             <div className="container">
@@ -67,6 +68,8 @@ function Navbar() {
                         className={cx("navbar__button--checkbox", "hidden")}
                         type="checkbox"
                         id="navbar-menu"
+                        checked={showDropDown}
+                        onChange={() => setShowDropDown(!showDropDown)}
                     />{" "}
                     <label
                         htmlFor="navbar-menu"
@@ -82,6 +85,7 @@ function Navbar() {
                         {menuData.map((item, index) => (
                             <NavbarItem
                                 key={index}
+                                setShowDropDown={setShowDropDown}
                                 title={item.title}
                                 path={item.path}
                                 subMenu={item.children}

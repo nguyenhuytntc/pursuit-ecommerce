@@ -6,11 +6,15 @@ import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
-function NavbarItem({ title = "", path = "", subMenu = [] }) {
+function NavbarItem({ title = "", path = "", subMenu = [], setShowDropDown }) {
     const [showSubMenu, setShowSubMenu] = useState(false);
     return (
         <li className={cx("navbar__item")}>
-            <Link className={cx("navbar__link")} to={path}>
+            <Link
+                className={cx("navbar__link")}
+                to={path}
+                onClick={() => setShowDropDown(false)}
+            >
                 {title}
             </Link>
             <img
@@ -26,7 +30,11 @@ function NavbarItem({ title = "", path = "", subMenu = [] }) {
             <ul className={cx("navbar__dropdown", showSubMenu ? "show" : "")}>
                 {subMenu.map((item, index) => (
                     <li key={index}>
-                        <Link className={cx("sub__link")} to={item.path}>
+                        <Link
+                            className={cx("sub__link")}
+                            to={item.path}
+                            onClick={() => setShowDropDown(false)}
+                        >
                             {item.name}
                         </Link>
                     </li>

@@ -1,0 +1,99 @@
+.explore {
+    margin: 150px 0;
+
+    @media (max-width: 480px) {
+        margin: 100px 0;
+    }
+}
+.explore__heading {
+    padding-bottom: 70px;
+    color: var(--text-dark);
+
+    font-family: "Roboto Slab";
+
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 5.2rem; /* 123.81% */
+
+    @media (max-width: 480px) {
+        padding-bottom: 40px;
+    }
+}
+.explore__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.explore__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 25%;
+    padding: 15px;
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+        width: 33.333%; // 3 cột
+    }
+
+    @media (max-width: 768px) {
+        width: 50%; // 2 cột
+    }
+
+    @media (max-width: 480px) {
+        width: 100%; // 1 cột
+    }
+}
+
+.explore__img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 230px;
+    background: #f1deb4;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+
+    .explore__item:hover & {
+        border-color: var(--primary-color);
+    }
+
+    @media (max-width: 1024px) {
+        height: 200px;
+    }
+
+    @media (max-width: 768px) {
+        height: 180px;
+    }
+}
+
+.explore__img {
+    height: 60%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+    .explore__item:hover & {
+        transform: scale(1.05);
+    }
+}
+
+.explore__title {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: center;
+    transition: color 0.3s ease;
+
+    .explore__item:hover & {
+        color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.6rem;
+    }
+}
