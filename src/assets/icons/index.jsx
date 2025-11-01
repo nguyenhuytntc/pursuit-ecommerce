@@ -4,6 +4,8 @@ import cart from "./cart.svg";
 import heart from "./heart.svg";
 import menu from "./menu.svg";
 import arrowDown from "./arrow-down.svg";
+import redHeart from "./red-heart.svg";
+import star from "./star.svg";
 
 const icons = {
     search,
@@ -12,6 +14,8 @@ const icons = {
     heart,
     arrowDown,
     menu,
+    redHeart,
+    star,
 };
 
 export default icons;

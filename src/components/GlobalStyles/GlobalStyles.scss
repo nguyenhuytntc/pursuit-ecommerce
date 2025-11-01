@@ -54,3 +54,30 @@ a {
 .hidden {
     display: none;
 }
+
+// CSS Button
+.btn-outline {
+    padding: 15px 35px;
+    color: var(--primary-color);
+    text-align: center;
+
+    font-family: Manrope;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 3rem; /* 166.667% */
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary {
+    color: #fff;
+    text-align: center;
+    padding: 15px 35px;
+    width: 100%;
+
+    /* Button 1 */
+    font-family: Manrope;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 3rem; /* 166.667% */
+    background-color: var(--primary-color);
+}

@@ -1,0 +1,85 @@
+.feature__title {
+    color: var(--text-dark);
+
+    font-family: "Roboto Slab";
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 5.2rem; /* 123.81% */
+    margin-bottom: 18px;
+}
+
+.feature__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.feature__desc {
+    color: #566363;
+
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 3rem; /* 166.667% */
+}
+
+.feature__list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.feature__card {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 auto;
+    width: calc(100% / 3);
+}
+.feature__img {
+    height: 310px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+.card__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+.card__cate {
+    color: var(--Text-Color-Light, #566363);
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.4rem; /* 171.429% */
+}
+.card__icon--heart {
+    width: 20px;
+}
+.card__name {
+    color: var(--text-dark);
+
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 3rem; /* 150% */
+}
+.card__rate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--Text-Color-Light, #566363);
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 3rem; /* 166.667% */
+}
+.card__icon--star {
+    width: 24px;
+}
+.card__button {
+    margin-top: 24px;
+    margin-bottom: 55px;
+}

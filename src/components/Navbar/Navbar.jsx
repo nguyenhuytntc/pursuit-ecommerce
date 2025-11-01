@@ -5,6 +5,7 @@ import NavbarItem from "./NavbarItem";
 import menuData from "./menuData";
 import HeaderSearch from "./HeaderSearch";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -14,7 +15,9 @@ function Navbar() {
         <header className={cx("header")}>
             <div className="container">
                 <div className={cx("header__top-row")}>
-                    <h1 className={cx("header__logo")}>Pursuit</h1>
+                    <Link to="/">
+                        <h1 className={cx("header__logo")}>Pursuit</h1>
+                    </Link>
                     <HeaderSearch desktop={true} />
                     <div className={cx("header__actions")}>
                         <button
